@@ -24,6 +24,7 @@ const projects: Project[] = [
     description: 'Designed and built a SaaS platform combining computational geometry (No Fit Polygon, Minkowski collision) and multi-algorithm optimization (Genetic Algorithm, Simulated Annealing, Beam Search) to maximize material utilization in manufacturing.',
     image: '/InspireNest_Image.jpg',
     tags: ['FastAPI', 'Python', 'React', 'Tailwind', 'Docker', 'Computational Geometry'],
+    liveUrl: 'https://inspirenest-frontend.onrender.com',
     githubUrl: 'https://github.com/tirthshah7/InspireNest',
     featured: true,
     details: [
@@ -181,7 +182,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               onClick={() => window.open(project.liveUrl, '_blank')}
             >
               <ExternalLink className="w-4 h-4 mr-2" />
-              Live Demo
+              View Project
             </Button>
           )}
           {project.githubUrl && (
