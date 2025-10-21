@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 
 export function Hero() {
@@ -82,6 +82,15 @@ export function Hero() {
               onClick={() => scrollToSection('contact')}
             >
               Get In Touch
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-purple-500/50 hover:border-purple-500 hover:bg-purple-500/10 transition-all w-full sm:w-auto"
+              onClick={() => window.open('https://www.theinspirededit.com/', '_blank', 'noopener,noreferrer')}
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Visit Blog
             </Button>
           </motion.div>
 
