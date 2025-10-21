@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate OG Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .og-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 80px;
+            box-sizing: border-box;
+        }
+        
+        .content {
+            flex: 1;
+            z-index: 2;
+        }
+        
+        .name {
+            font-size: 72px;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+            line-height: 1.1;
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0 30px 0;
+        }
+        
+        .description {
+            font-size: 24px;
+            color: #cbd5e1;
+            margin: 0 0 40px 0;
+            line-height: 1.4;
+            max-width: 600px;
+        }
+        
+        .badges {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            color: #06b6d4;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .visual {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            z-index: 2;
+        }
+        
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            color: #06b6d4;
+            line-height: 1.6;
+        }
+        
+        .code-line {
+            margin: 4px 0;
+        }
+        
+        .highlight {
+            color: #8b5cf6;
+        }
+        
+        .comment {
+            color: #64748b;
+        }
+        
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: linear-gradient(45deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            top: 10%;
+            right: 15%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            width: 40px;
+            height: 40px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            top: 30%;
+            right: 5%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .domain {
+            position: absolute;
+            bottom: 40px;
+            right: 80px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #06b6d4;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="og-container">
+        <div class="background-pattern"></div>
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="content">
+            <h1 class="name">Tirth Shah</h1>
+            <h2 class="title">Software Engineer | AI & Full-Stack Developer</h2>
+            <p class="description">
+                Specializing in AI, Machine Learning, and Full-Stack Development. 
+                Currently at Stellantis, formerly Amazon. PMP® certified.
+            </p>
+            <div class="badges">
+                <span class="badge">React</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">Python</span>
+                <span class="badge">AI/ML</span>
+                <span class="badge">AWS</span>
+            </div>
+        </div>
+        
+        <div class="visual">
+            <div class="code-block">
+                <div class="code-line"><span class="highlight">const</span> developer = {</div>
+                <div class="code-line">  name: <span class="highlight">'Tirth Shah'</span>,</div>
+                <div class="code-line">  role: <span class="highlight">'Software Engineer'</span>,</div>
+                <div class="code-line">  skills: [</div>
+                <div class="code-line">    <span class="highlight">'AI/ML'</span>,</div>
+                <div class="code-line">    <span class="highlight">'Full-Stack'</span>,</div>
+                <div class="code-line">    <span class="highlight">'React'</span>,</div>
+                <div class="code-line">    <span class="highlight">'Python'</span></div>
+                <div class="code-line">  ],</div>
+                <div class="code-line">  company: <span class="highlight">'Stellantis'</span>,</div>
+                <div class="code-line">  <span class="comment">// Available for opportunities</span></div>
+                <div class="code-line">};</div>
+            </div>
+        </div>
+        
+        <div class="domain">tirthshah.xyz</div>
+    </div>
+    
+    <script>
+        // This script will help you capture the image
+        function captureImage() {
+            const container = document.querySelector('.og-container');
+            html2canvas(container, {
+                width: 1200,
+                height: 630,
+                scale: 1,
+                useCORS: true,
+                allowTaint: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'og-image.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+        
+        // Add a button to capture the image
+        const button = document.createElement('button');
+        button.textContent = 'Download OG Image';
+        button.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 10px 20px;
+            background: #06b6d4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        `;
+        button.onclick = captureImage;
+        document.body.appendChild(button);
+    </script>
+    
+    <!-- Include html2canvas library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
