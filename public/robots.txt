@@ -3,5 +3,5 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://tirthshah.dev/sitemap.xml
+Sitemap: https://tirthshah.xyz/sitemap.xml
 
