@@ -20,6 +20,23 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Inspired Energy Optimizer - AI-Powered Energy Forecasting & Optimization',
+    description: 'Architected and deployed an enterprise-grade AI platform that reduces commercial building energy costs by 15-20% using hybrid Prophet+XGBoost models. Features real-time forecasting, Model Predictive Control optimization, and comprehensive ModelOps dashboard with drift detection.',
+    image: '/Inspired_Energy_Optimizer.jpg',
+    tags: ['FastAPI', 'Python', 'React', 'TypeScript', 'Prophet', 'XGBoost', 'TimescaleDB', 'Docker', 'Kubernetes'],
+    liveUrl: 'https://ai-energy-optimizer-p61bm3ia3-the-inspired-edits-projects.vercel.app',
+    githubUrl: 'https://github.com/tirthshah7/Inspired-Energy-Optimizer',
+    featured: true,
+    details: [
+      'Hybrid Prophet+XGBoost models achieving R² = 0.85-0.98 on 5 years of building data',
+      'Real-time 24h & 7-day energy forecasting with 15-minute interval predictions',
+      'Model Predictive Control (MPC) optimization using CVXPY for cost reduction',
+      'Complete ModelOps: version control, drift detection, automated retraining, one-click rollback',
+      'Multi-building support: 6 building types (healthcare, office, retail, educational, residential, industrial)',
+      'Production infrastructure: TimescaleDB, Redis caching, Kubernetes deployment, Metabase BI integration'
+    ]
+  },
+  {
     title: 'InspireNest - AI-Powered Nesting Optimization',
     description: 'Designed and built a SaaS platform combining computational geometry (No Fit Polygon, Minkowski collision) and multi-algorithm optimization (Genetic Algorithm, Simulated Annealing, Beam Search) to maximize material utilization in manufacturing.',
     image: '/InspireNest_Image.jpg',
